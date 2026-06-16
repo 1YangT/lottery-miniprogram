@@ -1,0 +1,89 @@
+/* 抽签系统自定义样式 */
+
+/* 页面背景 */
+.stApp {
+    background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+}
+
+/* 标题样式 */
+h1, h2, h3 {
+    color: #065f46;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* 抽签结果卡片 */
+.draw-result {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f59e0b;
+    text-align: center;
+}
+
+/* 中签者名字样式 */
+.winner-name {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #dc2626;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* 按钮样式 */
+.draw-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.draw-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.reset-button {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+}
+
+/* 侧边栏样式 */
+.css-1d391kg {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* 状态卡片 */
+.status-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* 已抽名单样式 */
+.drawn-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
