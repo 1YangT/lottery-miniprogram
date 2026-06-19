@@ -4,6 +4,12 @@
 """
 
 import streamlit as st
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_dir)
+
 from config.settings import PAGE_CONFIG, APP_CONFIG, THEME_COLORS
 from utils.common import load_names, save_names, parse_names
 from src.draw_logic import DrawSystem
@@ -14,8 +20,10 @@ def main():
     st.set_page_config(**PAGE_CONFIG)
     
     # 加载自定义样式
-    with open("assets/style.css", encoding="utf-8") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    css_path = os.path.join(current_dir, "assets", "style.css")
+    if os.path.exists(css_path):
+        with open(css_path, encoding="utf-8") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     
     # 加载初始名单
     initial_names = load_names()

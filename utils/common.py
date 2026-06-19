@@ -7,8 +7,10 @@ import json
 import os
 from typing import List
 
+current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def load_names(file_path: str = "data/names.txt") -> List[str]:
+
+def load_names(file_path: str = None) -> List[str]:
     """
     加载名单数据
     
@@ -18,6 +20,9 @@ def load_names(file_path: str = "data/names.txt") -> List[str]:
     Returns:
         名单列表
     """
+    if file_path is None:
+        file_path = os.path.join(current_dir, "data", "names.txt")
+    
     if not os.path.exists(file_path):
         return []
     
@@ -30,7 +35,7 @@ def load_names(file_path: str = "data/names.txt") -> List[str]:
         return []
 
 
-def save_names(names: List[str], file_path: str = "data/names.txt") -> bool:
+def save_names(names: List[str], file_path: str = None) -> bool:
     """
     保存名单数据
     
@@ -41,6 +46,9 @@ def save_names(names: List[str], file_path: str = "data/names.txt") -> bool:
     Returns:
         是否保存成功
     """
+    if file_path is None:
+        file_path = os.path.join(current_dir, "data", "names.txt")
+    
     try:
         with open(file_path, "w", encoding="utf-8") as f:
             for name in names:
@@ -51,7 +59,7 @@ def save_names(names: List[str], file_path: str = "data/names.txt") -> bool:
         return False
 
 
-def save_draw_history(history: List[dict], file_path: str = "data/draw_history.json") -> bool:
+def save_draw_history(history: List[dict], file_path: str = None) -> bool:
     """
     保存抽签历史记录
     
@@ -62,6 +70,9 @@ def save_draw_history(history: List[dict], file_path: str = "data/draw_history.j
     Returns:
         是否保存成功
     """
+    if file_path is None:
+        file_path = os.path.join(current_dir, "data", "draw_history.json")
+    
     try:
         data = {"history": history}
         with open(file_path, "w", encoding="utf-8") as f:
@@ -72,7 +83,7 @@ def save_draw_history(history: List[dict], file_path: str = "data/draw_history.j
         return False
 
 
-def load_draw_history(file_path: str = "data/draw_history.json") -> List[dict]:
+def load_draw_history(file_path: str = None) -> List[dict]:
     """
     加载抽签历史记录
     
@@ -82,6 +93,9 @@ def load_draw_history(file_path: str = "data/draw_history.json") -> List[dict]:
     Returns:
         抽签历史列表
     """
+    if file_path is None:
+        file_path = os.path.join(current_dir, "data", "draw_history.json")
+    
     if not os.path.exists(file_path):
         return []
     
