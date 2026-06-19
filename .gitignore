@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv/
+*.egg-info/
+dist/
+build/
+*.log
+.DS_Store
+.streamlit/secrets.toml
+.streamlit/config.toml
+data/draw_history.json
